@@ -1,4 +1,10 @@
 ﻿<?php     
+
+require_once __DIR__ . '/app/Core/Autoloader.php';
+Autoloader::register();
+
+require_once __DIR__ . '/app/Core/Config.php';
+
 header ("Content-Type: text/html; charset=utf-8");
 include ("./sql/bd.php");
           //  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!     
