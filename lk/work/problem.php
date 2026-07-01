@@ -5,13 +5,11 @@ include ("../../sql/smtp-func.php");
 if (isset($_POST['proekt'])) { $proekt=$_POST['proekt']; 
 	if ($proekt =='') { unset($proekt);} } 
     if (empty($proekt)) { exit ("Нет пользователя!");} 
-
-//Замените настройки на нужные.
-$mail_to = 'kredit@agrofart.ru'; //вам потребуется указать здесь Ваш настоящий почтовый ящик, куда должно будет прийти письмо.
-//$mail_to = 'dmazharcev@agrofart.ru'; //вам потребуется указать здесь Ваш настоящий почтовый ящик, куда должно будет прийти письмо.
-$type = 'plain'; //Можно поменять на html; plain означяет: будет присылаться чистый текст.
+$mail_to = 'kredit@agrofart.ru'; 
+//$mail_to = 'dmazharcev@agrofart.ru'; 
+$type = 'plain'; 
 $charset = 'utf-8';
-   //$message = 'Необходимо связаться с торговым представителем '.$proekt .' по вопросу задолженностей контрагентов';
+ 
    $message = "Необходимо связаться с торговым представителем ".$proekt ." по вопросу задолженностей контрагентов";
    $subject = 'Запрос с Web-портала';
    $mail_from = 'hosting@agrofart.ru';
@@ -32,12 +30,3 @@ $charset = 'utf-8';
    exit("<html><head><title>Загрузка..</title><meta http-equiv='Refresh' content='1; URL=/lk/work'></head></html>");
    echo '</body>';
    exit;
-
-
-
-
-
-//if (!mail("dmazharcev@agrofart.ru", "Запрос с Web-портала", "Необходимо связаться с торговым представителем ".$proekt ." по вопросу задолженностей контрагентов")){
-	//exit("<html><head><title>Загрузка..</title><meta http-equiv='Refresh' content='3; URL=/lk/work'>Не отправлено!</head></html>"); } 
-//echo $proekt;
-//exit("<html><head><title>Загрузка..</title><meta http-equiv='Refresh' content='0; URL=/lk/work'></head></html>");

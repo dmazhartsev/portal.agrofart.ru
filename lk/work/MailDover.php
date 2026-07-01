@@ -15,7 +15,7 @@ $password = htmlspecialchars($password);
 include ("../../sql/bd.php");
 include ("../../sql/smtp-func.php");
 
-$result = mysql_query("SELECT * FROM users WHERE id=".$_SESSION['id'],$db); 
+$result = mysql_query("SELECT * FROM users WHERE id1C=".$_SESSION['id1C'],$db); 
 $myrow = mysql_fetch_array($result);
 $id1C = $myrow['id1C'];
 $mail_to = $myrow['email'];

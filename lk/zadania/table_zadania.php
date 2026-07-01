@@ -201,7 +201,7 @@ while($row = mysql_fetch_array($rs)) {
 					</form>
 					";
 			}else{
-				echo '$Super='.$Super.' Complete='.$row['Complete'];
+				echo 'Не выполнено';
 			};
    echo "</td></tr>
    <tr style='".$BGColor.">";

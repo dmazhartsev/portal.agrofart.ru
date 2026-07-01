@@ -24,7 +24,7 @@ $pKodKA=" ";
    $pKodKA=" and (dolg.KodKA='$KodKA')"; 
 };
 
-  $strSQL = "SELECT * FROM dolg WHERE ((Proekt='$proekt') or (SuperProekt='$proekt') or (SuperPuperProekt='$proekt')) and (Prosrok>=7) ".$pKodKA." ORDER BY ProektName, Kontragent ASC";
+  $strSQL = "SELECT * FROM dolg WHERE ((Proekt='$proekt') or (SuperProekt='$proekt') or (SuperPuperProekt='$proekt')) and (Prosrok>=3) ".$pKodKA." ORDER BY ProektName, Kontragent ASC";
  $rs = mysql_query($strSQL);
 
  while($row = mysql_fetch_array($rs)) {

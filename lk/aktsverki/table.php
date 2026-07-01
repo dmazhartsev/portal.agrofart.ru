@@ -55,7 +55,7 @@ WHERE ".$pProekt." and (Kvartal=".$exp.") ORDER BY login, name ASC";
 
 echo"</table>";
 
-echo phpversion();
+
 ?>
 
 

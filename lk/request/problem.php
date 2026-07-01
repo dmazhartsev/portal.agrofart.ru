@@ -2,16 +2,14 @@
 header ("Content-Type: text/html; charset=utf-8");
 include ("../../sql/bd.php");
 include ("../../sql/smtp-func.php");
-if (isset($_POST['proekt'])) { $proekt=$_POST['proekt']; 
-	if ($proekt =='') { unset($proekt);} } 
-    if (empty($proekt)) { exit ("Нет пользователя!");} 
-
-//Замените настройки на нужные.
-$mail_to = 'kredit@agrofart.ru'; //вам потребуется указать здесь Ваш настоящий почтовый ящик, куда должно будет прийти письмо.
-//$mail_to = 'dmazharcev@agrofart.ru'; //вам потребуется указать здесь Ваш настоящий почтовый ящик, куда должно будет прийти письмо.
-$type = 'plain'; //Можно поменять на html; plain означяет: будет присылаться чистый текст.
+if (isset($_POST['KodKA'])) { $KodKA=$_POST['KodKA']; if ($KodKA =='') { unset($KodKA);} }
+if (isset($_POST['id'])) { $id = $_POST['id'];  if ($id == '') { unset($id);} } 
+if (isset($_POST['exp'])) { $exp = $_POST['exp'];  if ($exp == '') { unset($exp);} } 
+if (isset($_POST['login'])) { $login = $_POST['login'];  if ($login == '') { unset($login);} } 
+if (isset($_POST['NomDoc'])) { $NomDoc = $_POST['NomDoc'];  if ($NomDoc == '') { unset($NomDoc);} }
+$mail_to = 'dmazharcev@agrofart.ru';
+$type = 'plain';
 $charset = 'utf-8';
-   //$message = 'Необходимо связаться с торговым представителем '.$proekt .' по вопросу задолженностей контрагентов';
    $message = "Необходимо связаться с торговым представителем ".$proekt ." по вопросу сделанных реализаций";
    $subject = 'Запрос с Web-портала';
    $mail_from = 'hosting@agrofart.ru';
@@ -28,16 +26,4 @@ $charset = 'utf-8';
               <body>';
    if (!$sended) echo "<script>alert(\"Письмо не удалось отправить. Пожалуйста свяжитесь с администратором сайта\");</script>"; 
    else echo "<script>alert(\"Письмо было успешно отправлено. В ближайшее Вы получите ответ на него.\");</script>"; 
-
    exit("<html><head><title>Загрузка..</title><meta http-equiv='Refresh' content='1; URL=/lk/work'></head></html>");
-   echo '</body>';
-   exit;
-
-
-
-
-
-//if (!mail("dmazharcev@agrofart.ru", "Запрос с Web-портала", "Необходимо связаться с торговым представителем ".$proekt ." по вопросу задолженностей контрагентов")){
-	//exit("<html><head><title>Загрузка..</title><meta http-equiv='Refresh' content='3; URL=/lk/work'>Не отправлено!</head></html>"); } 
-//echo $proekt;
-//exit("<html><head><title>Загрузка..</title><meta http-equiv='Refresh' content='0; URL=/lk/work'></head></html>");
