@@ -1,0 +1,11 @@
+parameters:
+    level: 5
+
+    paths:
+        - app
+
+    tmpDir: storage/phpstan
+
+    excludePaths:
+        - legacy
+        - vendor
