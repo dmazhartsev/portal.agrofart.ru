@@ -1,6 +1,34 @@
+# Dependencies
 /vendor/
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+
+# Runtime
 /storage/
-/.env
-/.idea/
-/.vscode/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Composer local binary
 composer.phar
+
+# PHPUnit
+.phpunit.result.cache
+
+# PHPStan
+.phpstan/
+
+# Xdebug
+cachegrind.out.*
+
+# Coverage
+coverage/
